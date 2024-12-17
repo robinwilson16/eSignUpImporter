@@ -157,3 +157,4 @@ C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.pdb
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.genruntimeconfig.cache
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\ref\eSignUpImporter.dll
+C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.sourcelink.json

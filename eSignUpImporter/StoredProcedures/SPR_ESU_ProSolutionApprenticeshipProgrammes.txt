@@ -1,0 +1,29 @@
+CREATE PROCEDURE [dbo].[SPR_ESU_ProSolutionApprenticeshipProgrammes]
+	@AcademicYear NVARCHAR(5)
+AS
+BEGIN
+	SET XACT_ABORT, NOCOUNT ON;
+	SET DATEFORMAT ymd
+	
+	--DECLARE @AcademicYear VARCHAR(5) = '24/25'
+
+	SELECT
+		OfferingID = CRS.OfferingID,
+		CourseCode = CRS.Code,
+		CourseTitle = CRS.Name,
+		StandardCode = CRS.ApprenticeshipTrailblazerStandardID,
+		StandardName = STD.Description,
+		StartDate = CRS.StartDate,
+		EndDate = CRS.EndDate
+	FROM ProSolution.dbo.Offering CRS
+	INNER JOIN ProSolution.dbo.ApprenticeshipTrailblazerStandard STD
+		ON STD.ApprenticeshipTrailblazerStandardID = CRS.ApprenticeshipTrailblazerStandardID
+	WHERE
+		CRS.AcademicYearID = @AcademicYear
+		AND CRS.OfferingTypeID = 7 --PROGRAMME AIM (ER)
+		AND CRS.OfferingStatusID = 3 --Running
+		AND CRS.StartDate >= '20' + LEFT ( CRS.AcademicYearID, 2 ) + '-08-01'
+		--AND CRS.Code = 'WPH9468Y-4FY1H'
+	ORDER BY
+		CRS.Code
+END

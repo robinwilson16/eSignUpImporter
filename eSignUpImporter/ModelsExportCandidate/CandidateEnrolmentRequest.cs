@@ -1,4 +1,7 @@
-﻿namespace eSignUpImporter.Models
+﻿using eSignUpImporter.Models;
+using System.Text.Json.Serialization;
+
+namespace eSignUpImporter.ModelsExportCandidate
 {
     public class CandidateEnrolmentRequest
     {
@@ -7,6 +10,7 @@
         public string? Email { get; set; }
         public int EnrolmentRequestID { get; set; }
 
+        [JsonIgnore]
         public Candidate? Candidate { get; set; }
         public EnrolmentRequest? EnrolmentRequest { get; set; }
     }

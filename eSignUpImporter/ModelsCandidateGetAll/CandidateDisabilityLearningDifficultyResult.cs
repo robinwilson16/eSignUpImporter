@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace eSignUpImporter.Models
+namespace eSignUpImporter.ModelsCandidateGetAll
 {
     public class CandidateDisabilityLearningDifficultyResult
     {

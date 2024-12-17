@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace eSignUpImporter.Models
+namespace eSignUpImporter.ModelsCandidateGetAll
 {
     public class CandidateNote
     {

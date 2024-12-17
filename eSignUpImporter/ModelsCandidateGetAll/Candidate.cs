@@ -2,7 +2,7 @@
 using System.Net;
 using System.Runtime.ConstrainedExecution;
 
-namespace eSignUpImporter.Models
+namespace eSignUpImporter.ModelsCandidateGetAll
 {
     public class Candidate
     {
@@ -34,7 +34,7 @@ namespace eSignUpImporter.Models
         public string? TelephoneNumber { get; set; }
         public string? MobileNumber { get; set; }
         public string? EmailAddress { get; set; }
-        public string? EmegencyContactFullName { get; set; }
+        public string? EmergencyContactFullName { get; set; }
         public string? EmergencyContactTelNumber { get; set; }
         public string? EmergencyContactEmail { get; set; }
         public string? EmergencyContactRelationship { get; set; }
