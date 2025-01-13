@@ -9,8 +9,8 @@
     <Description>A tool for importing data from eSignUp</Description>
     <Copyright>Robin Wilson</Copyright>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

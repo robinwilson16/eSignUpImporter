@@ -224,6 +224,8 @@ namespace eSignUpImporter
 
             Console.WriteLine(await GetCourses());
 
+            bool NewLearnersToImport = true;
+
             if (ImportObjectType == "CandidateGetAll")
             {
                 Console.WriteLine($"Comparing {GACandidates?.Count()} Candidates to ProSolution Enrolment Requests");
@@ -232,7 +234,8 @@ namespace eSignUpImporter
                 if (GACandidates?.Where(c => c.CandidateEnrolmentRequest == null).Count() == 0)
                 {
                     Console.WriteLine($"Found No New Learners to Import");
-                    return 0;
+                    NewLearnersToImport = false;
+                    //return 0;
                 }
                 Console.WriteLine($"Found {GACandidates?.Where(c => c.CandidateEnrolmentRequest == null).Count()} New Learners to Import");
             }
@@ -244,39 +247,56 @@ namespace eSignUpImporter
                 if (ECCandidates?.Where(c => c.CandidateEnrolmentRequest == null).Count() == 0)
                 {
                     Console.WriteLine($"Found No New Learners to Import");
-                    return 0;
+                    NewLearnersToImport = false;
+                    //return 0;
                 }
                 Console.WriteLine($"Found {ECCandidates?.Where(c => c.CandidateEnrolmentRequest == null).Count()} New Learners to Import");
             }
 
-            Console.WriteLine($"\nImporting New Learners into ProSolution");
-
-            Console.WriteLine(await GetMaxEnrolmentRequestID());
-
-            Console.WriteLine($"Current Max Enrolment Request ID is {MaxEnrolmentRequestID}");
-
-            if (MaxEnrolmentRequestID > 0)
+            if (NewLearnersToImport == true)
             {
+                Console.WriteLine($"\nImporting New Learners into ProSolution");
+
+                //Console.WriteLine(await GetMaxEnrolmentRequestID());
+
+                //Console.WriteLine($"Current Max Enrolment Request ID is {MaxEnrolmentRequestID}");
+
+                //if (MaxEnrolmentRequestID > 0)
+                //{
                 if (ImportObjectType == "CandidateGetAll")
                 {
-                    Console.WriteLine(ImportNewLearnersGA());
+                    Console.WriteLine(CreateEnrolmentRequestsGA());
                 }
                 else if (ImportObjectType == "ExportCandidates")
                 {
-                    Console.WriteLine(ImportNewLearnersEC());
+                    Console.WriteLine(CreateEnrolmentRequestsEC());
 
                     //Attach offering ID from ProSolution by looking up based on standard title
                     Console.WriteLine(MatchEnrolmentRequestsToOfferingIDsEC());
                 }
 
                 Console.WriteLine($"Importing {EnrolmentRequests?.Count()} Enrolment Requests into ProSolution");
+
+                //Inserting data from here
                 Console.WriteLine(await InsertEnrolmentRequests());
             }
-            else
+            
+            //Add courses to previously imported records where course was not available or imported
+            if (ImportObjectType == "CandidateGetAll")
             {
-                Console.WriteLine($"Not importing learners because max enrolment request is invalid");
-                return 1;
+
             }
+            else if (ImportObjectType == "ExportCandidates")
+            {
+                Console.WriteLine(await AddOfferingToExistingEnrolmentRequestsEC());
+            }
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Not importing learners because max enrolment request is invalid");
+            //    return 1;
+            //}
 
             return 0;
         }
@@ -421,7 +441,7 @@ namespace eSignUpImporter
 
         public static string GetCandidatesForImportEC()
         {
-            var candidateImportSettings = _config?.GetSection("CandidateImport");
+            var candidateImportSettings = _config?.GetSection("ExportCandidate");
             string? registrationStatusToImportName = candidateImportSettings?["RegistrationStatusToImportName"];
 
             string returnMsg;
@@ -622,7 +642,7 @@ namespace eSignUpImporter
             return miSystemResult;
         }
 
-        public static string ImportNewLearnersGA()
+        public static string CreateEnrolmentRequestsGA()
         {
             var enrolmentRequestSettings = _config?.GetSection("EnrolmentRequests");
             string? academicYearID = enrolmentRequestSettings?["AcademicYearID"];
@@ -1140,7 +1160,7 @@ namespace eSignUpImporter
             return $"{EnrolmentRequests?.Count()} New Enrolment Request Records Prepared To Be Inserted";
         }
 
-        public static string ImportNewLearnersEC()
+        public static string CreateEnrolmentRequestsEC()
         {
             var enrolmentRequestSettings = _config?.GetSection("EnrolmentRequests");
             string? academicYearID = enrolmentRequestSettings?["AcademicYearID"];
@@ -1157,6 +1177,7 @@ namespace eSignUpImporter
                     //Add 1 to the current max enrolment request ID
                     currentEnrolmentRequestID += 1;
 
+                    //Create New Enrolment Request
                     newEnrolmentRequest = new Models.EnrolmentRequest()
                     {
                         //EnrolmentRequestId = currentEnrolmentRequestID ?? default, //Better to use an auto id so as not to clash with records imported from the web toolkit so start at 1
@@ -1364,7 +1385,7 @@ namespace eSignUpImporter
                         ParentAddress2 = null,
                         ParentAddress3 = null,
                         ParentAddress4 = null,
-                        ParentPostCodeOut = candidate?.ParentGuardianHomePostCode?.Length > 3 ? candidate?.ParentGuardianHomePostCode?.TrimEnd().SubstringOrDefault(0, candidate.ParentGuardianHomePostCode.TrimEnd().Length - 3).TrimEnd()?.SubstringOrDefault(0, 3) : "",
+                        ParentPostCodeOut = candidate?.ParentGuardianHomePostCode?.Length > 3 ? candidate?.ParentGuardianHomePostCode?.TrimEnd().SubstringOrDefault(0, candidate.ParentGuardianHomePostCode.TrimEnd().Length - 3)?.TrimEnd()?.SubstringOrDefault(0, 3) : "",
                         ParentPostCodeIn = candidate?.ParentGuardianHomePostCode?.Length > 3 ? candidate?.ParentGuardianHomePostCode?.TrimEnd().SubstringOrDefault(candidate.ParentGuardianHomePostCode.TrimEnd().Length - 3)?.SubstringOrDefault(0, 2) : "",
                         ParentCountry = null,
                         ParentPhoneNumber = null,
@@ -1424,14 +1445,14 @@ namespace eSignUpImporter
                         HasEducationHealthCarePlan = candidate?.HasEHCP ?? false,
                         PreviousUklearningProvider = null,
                         DisabilityCategory1Id =
-                            candidate?.LLDDAndHealthProblems?.Where(d => d.PrimaryLLDD == "1").FirstOrDefault()?.LLDDCat != null ?
-                            int.Parse(candidate?.LLDDAndHealthProblems?.Where(d => d.PrimaryLLDD == "1").FirstOrDefault()?.LLDDCat ?? "0")
+                            candidate?.LLDDAndHealthProblems?.Where(d => d.primaryLLDD == true).FirstOrDefault()?.LLDDCat != null ?
+                            int.Parse(candidate?.LLDDAndHealthProblems?.Where(d => d.primaryLLDD == true).FirstOrDefault()?.LLDDCat ?? "0")
                             : (candidate?.LLDDAndHealthProblems?.ElementAtOrDefault(0)?.LLDDCat != null ?
                             int.Parse(candidate?.LLDDAndHealthProblems?.ElementAtOrDefault(0)?.LLDDCat ?? "0")
                             : null),
                         DisabilityCategory2Id =
-                            candidate?.LLDDAndHealthProblems?.Where(d => d.PrimaryLLDD == "0").FirstOrDefault()?.LLDDCat != null ?
-                            int.Parse(candidate?.LLDDAndHealthProblems?.Where(d => d.PrimaryLLDD == "0").FirstOrDefault()?.LLDDCat ?? "0")
+                            candidate?.LLDDAndHealthProblems?.Where(d => d.primaryLLDD != true).FirstOrDefault()?.LLDDCat != null ?
+                            int.Parse(candidate?.LLDDAndHealthProblems?.Where(d => d.primaryLLDD != true).FirstOrDefault()?.LLDDCat ?? "0")
                             : (candidate?.LLDDAndHealthProblems?.ElementAtOrDefault(1)?.LLDDCat != null ?
                             int.Parse(candidate?.LLDDAndHealthProblems?.ElementAtOrDefault(1)?.LLDDCat ?? "0")
                             : null),
@@ -1567,6 +1588,84 @@ namespace eSignUpImporter
                         AflprovisionTypeId = null
                     };
 
+                    //Create Disability Category Records
+                    if (candidate?.LLDDAndHealthProblems != null)
+                    {
+                        IList<EnrolmentRequestDisabilityCategory> enrolRequestLLDDs = new List<EnrolmentRequestDisabilityCategory>();
+                        foreach (var lldd in candidate.LLDDAndHealthProblems)
+                        {
+                            EnrolmentRequestDisabilityCategory newEnrolRequestLLDD = new EnrolmentRequestDisabilityCategory
+                            {
+                                DisabilityCategoryId = (int)(lldd.llddCat ?? 0),
+                                IsPrimary = lldd.primaryLLDD
+                            };
+                            enrolRequestLLDDs.Add(newEnrolRequestLLDD);
+                        }
+                        newEnrolmentRequest.EnrolmentRequestDisabilityCategory = enrolRequestLLDDs;
+                    }
+
+                    //Employment History Records
+                    if (candidate?.PlacedRecruitments != null)
+                    {
+                        IList<EnrolmentRequestEmploymentHistory> enrolRequestEmployHistories = new List<EnrolmentRequestEmploymentHistory>();
+                        foreach (var job in candidate.PlacedRecruitments)
+                        {
+                            EnrolmentRequestEmploymentHistory newEnrolRequestEmployHistory = new EnrolmentRequestEmploymentHistory
+                            {
+                                EmployerName = job.Employer,
+                                ContactTel = null,
+                                Email = job.EmployerContactEmail,
+                                JobTitle = job.ApprenticeshipVacancyTitle,
+                                IsFullTime = (!job?.isPartTimeHours ?? true),
+                                DateFrom = null,
+                                DateTo = null,
+                                WblperiodOfTrainingId = null,
+                                EmploymentStatusId = null,
+                                OrganisationId = null,
+                                WorkplacePostcodeOut = job?.ApprenticeshipEmployer?.VacancyEmployerSitePostCode?.Length > 3 ? job?.ApprenticeshipEmployer?.VacancyEmployerSitePostCode?.TrimEnd().SubstringOrDefault(0, job?.ApprenticeshipEmployer?.VacancyEmployerSitePostCode?.TrimEnd().Length - 3)?.TrimEnd()?.SubstringOrDefault(0, 3) : "",
+                                WorkplacePostcodeIn = job?.ApprenticeshipEmployer?.VacancyEmployerSitePostCode?.Length > 3 ? job?.ApprenticeshipEmployer?.VacancyEmployerSitePostCode?.TrimEnd().SubstringOrDefault(job?.ApprenticeshipEmployer?.VacancyEmployerSitePostCode?.TrimEnd().Length - 3)?.SubstringOrDefault(0, 2) : "",
+                                OrganisationContactId = null,
+                                IsPlacement = false,
+                                ExpectedPlacementEndDate = null,
+                                IsSelfEmployed = candidate?.LearnerEmploymentStatuses?.FirstOrDefault()?.EmploymentStatusMonitoring?.FirstOrDefault(e => e.ESMType == "SEI")?.ESMCode == "1"? true : false,
+                                EmploymentIntensityId = candidate?.LearnerEmploymentStatuses?.FirstOrDefault()?.EmploymentStatusMonitoring?.FirstOrDefault(e => e.ESMType == "EII")?.ESMCode,
+                                LengthOfUnemploymentId = candidate?.LearnerEmploymentStatuses?.FirstOrDefault()?.EmploymentStatusMonitoring?.FirstOrDefault(e => e.ESMType == "LOU")?.ESMCode,
+                                BenefitStatusIndicatorId = candidate?.LearnerEmploymentStatuses?.FirstOrDefault()?.EmploymentStatusMonitoring?.FirstOrDefault(e => e.ESMType == "BSI")?.ESMCode,
+                                PreviouslyInFteducation = candidate?.LearnerEmploymentStatuses?.FirstOrDefault()?.EmploymentStatusMonitoring?.FirstOrDefault(e => e.ESMType == "BSI")?.ESMCode == "1" ? true : false,
+                                Neetrisk = null,
+                                ReasonForUnemploymentId = null,
+                                EmploymentStatusType1112 = null,
+                                EmploymentStatusCode1112 = null,
+                                IncludeInReturn = true,
+                                LengthOfEmploymentId = candidate?.LearnerEmploymentStatuses?.FirstOrDefault()?.EmploymentStatusMonitoring?.FirstOrDefault(e => e.ESMType == "LOE")?.ESMCode,
+                            };
+                            enrolRequestEmployHistories.Add(newEnrolRequestEmployHistory);
+                        }
+                        newEnrolmentRequest.EnrolmentRequestEmploymentHistory = enrolRequestEmployHistories;
+                    }
+
+                    //Create Quals On Entry Records
+                    if (candidate?.CandidateQualifications != null)
+                    {
+                        IList<EnrolmentRequestQualsOnEntry> enrolRequestQOEs = new List<EnrolmentRequestQualsOnEntry>();
+                        foreach (var qoe in candidate.CandidateQualifications)
+                        {
+                            EnrolmentRequestQualsOnEntry newEnrolRequestQOE = new EnrolmentRequestQualsOnEntry
+                            {
+                                QualId = qoe.QualificationReference,
+                                Grade = qoe.Grade,
+                                DateAwarded = qoe.dateOfAward,
+                                Subject = qoe.QualificationTitle,
+                                Level = qoe.QualificationTypeName,
+                                PlaceOfStudy = qoe.OrganisationName,
+                                PredictedGrade = null,
+                                AchievedAtCollege = false
+                            };
+                            enrolRequestQOEs.Add(newEnrolRequestQOE);
+                        }
+                        newEnrolmentRequest.EnrolmentRequestQualsOnEntry = enrolRequestQOEs;
+                    }
+
                     //Add record to be inserted
                     EnrolmentRequests.Add(newEnrolmentRequest);
                 }
@@ -1625,6 +1724,46 @@ namespace eSignUpImporter
             }
 
             return insertMsg;
+        }
+
+        public static async Task<string> AddOfferingToExistingEnrolmentRequestsEC()
+        {
+            string updateMsg;
+
+            //Enrolment Requests Inserted by importer where the apprenticeship programme could not be found
+            var enrolRequestsToUpdate = EnrolmentRequests?
+                .Where(e => e.RequestSource == "eSignUp" && e.OfferingId == null)
+                .ToList();
+
+            try
+            {
+                if (enrolRequestsToUpdate != null)
+                {
+                    foreach (var enrolRequestToUpdate in enrolRequestsToUpdate)
+                    {
+                        var foundCandidate = EnrolmentRequests?.Where(e => e.EnrolmentRequestId == enrolRequestToUpdate.EnrolmentRequestId).FirstOrDefault();
+
+                        //Attach offering ID
+                        enrolRequestToUpdate.OfferingId = ProSolutionApprenticeshipProgrammes?.Where(a => a.StandardName == enrolRequestToUpdate.StudentDeclaration).FirstOrDefault()?.OfferingID;
+                    }
+
+                    if (_context != null)
+                        await _context.SaveChangesAsync();
+
+                    updateMsg = $"{enrolRequestsToUpdate?.Where(e => e.OfferingId != null).Count()} Courses Attached to Previously Imported Enrolment Request Records Added";
+                }
+                else
+                {
+                    updateMsg = $"No Courses Attached to Previously Imported Enrolment Request Records Added";
+                }
+            }
+            catch (Exception ex)
+            {
+                updateMsg = $"Could not insert the new Enrolment Request Records Due to An Error";
+                Console.WriteLine($"Error Inserting Enrolment Request Records into ProSolution ({ex.InnerException?.Message ?? ex.Message}). Please Try Again");
+            }
+
+            return updateMsg;
         }
 
         private static string EndpointException(Exception ex, int? recordID)

@@ -3,6 +3,7 @@ using eSignUpImporter.ModelsCandidateGetAll;
 using eSignUpImporter.ModelsExportCandidate;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 
 namespace eSignUpImporter.Data
 {
@@ -45,5 +46,19 @@ namespace eSignUpImporter.Data
         public DbSet<ModelsExportCandidate.LLDDAndHealthProblemPeopleSoft> ECLLDDAndHealthProblemPeopleSoft { get; set; }
         public DbSet<ModelsExportCandidate.OnboardingDocument> ECOnboardingDocument { get; set; }
         public DbSet<ModelsExportCandidate.PlacedRecruitment> ECPlacedRecruitment { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //Needed to avoid error:
+            //The dependent side could not be determined for the one-to-one relationship between 'ApprenticeshipEmployer.PlacedRecruitment' and 'PlacedRecruitment.ApprenticeshipEmployer'.
+            //To identify the dependent side of the relationship, configure the foreign key property.
+            //If these navigations should not be part of the same relationship, configure them independently via separate method chains in 'OnModelCreating'.
+            modelBuilder.Entity<PlacedRecruitment>()
+            .HasOne(a => a.ApprenticeshipEmployer)
+            .WithOne(a => a.PlacedRecruitment)
+            .HasForeignKey<ApprenticeshipEmployer>(c => c.VacancyID);
+        }
     }
 }

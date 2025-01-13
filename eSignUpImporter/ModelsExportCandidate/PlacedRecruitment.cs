@@ -73,7 +73,17 @@ namespace eSignUpImporter.ModelsExportCandidate
         }
 
         public string? HoursPerWeek { get; set; }
+
+        [JsonPropertyName("isPartTimeHours")]
         public string? IsPartTimeHours { get; set; }
+
+        [JsonIgnore]
+        [Display(Name = "Is Part Time Hours")]
+        public bool? isPartTimeHours
+        {
+            get { return IsPartTimeHours == null ? null : IsPartTimeHours == "Yes" ? true : false; }
+        }
+
         public string? DurationMonths { get; set; }
         public string? RPLReductionInWeeks { get; set; }
         public string? SubcontractorUKPRN { get; set; }

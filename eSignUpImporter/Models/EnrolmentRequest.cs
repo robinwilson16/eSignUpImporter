@@ -949,5 +949,9 @@
         public string? AclprovisionTypeId { get; set; }
 
         public string? AflprovisionTypeId { get; set; }
+
+        public ICollection<EnrolmentRequestDisabilityCategory>? EnrolmentRequestDisabilityCategory { get; set; }
+        public ICollection<EnrolmentRequestEmploymentHistory>? EnrolmentRequestEmploymentHistory { get; set; }
+        public ICollection<EnrolmentRequestQualsOnEntry>? EnrolmentRequestQualsOnEntry { get; set; }
     }
 }

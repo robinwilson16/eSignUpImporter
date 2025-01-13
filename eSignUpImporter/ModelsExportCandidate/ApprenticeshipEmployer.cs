@@ -16,6 +16,9 @@ namespace eSignUpImporter.ModelsExportCandidate
         [JsonIgnore]
         public int ID { get; set; }
 
+        [JsonIgnore]
+        public int VacancyID { get; set; }
+
         [JsonPropertyName("employerID")]
         public string? EmployerID { get; set; }
 
@@ -43,5 +46,8 @@ namespace eSignUpImporter.ModelsExportCandidate
         public string? VacancyEmployerSiteAddress2 { get; set; }
         public string? VacancyEmployerSiteTown { get; set; }
         public string? VacancyEmployerSitePostCode { get; set; }
+
+        [JsonIgnore]
+        public PlacedRecruitment? PlacedRecruitment { get; set; }
     }
 }
