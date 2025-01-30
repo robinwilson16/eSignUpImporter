@@ -9,7 +9,7 @@ WHERE
 	AND REQ.RequestSource = 'eSignUp'
 
 
-DECLARE @AcademicYear VARCHAR(5) = '24/25'
+--DECLARE @AcademicYear VARCHAR(5) = '24/25'
 
 DELETE REQE
 FROM EnrolmentRequest REQ
@@ -20,7 +20,7 @@ WHERE
 	AND REQ.RequestSource = 'eSignUp'
 
 
-DECLARE @AcademicYear VARCHAR(5) = '24/25'
+--DECLARE @AcademicYear VARCHAR(5) = '24/25'
 
 DELETE REQQ
 FROM EnrolmentRequest REQ
@@ -31,7 +31,7 @@ WHERE
 	AND REQ.RequestSource = 'eSignUp'
 
 
-DECLARE @AcademicYear VARCHAR(5) = '24/25'
+--DECLARE @AcademicYear VARCHAR(5) = '24/25'
 
 DELETE REQN
 FROM EnrolmentRequest REQ
@@ -42,12 +42,22 @@ WHERE
 	AND REQ.RequestSource = 'eSignUp'
 
 
+--DECLARE @AcademicYear VARCHAR(5) = '24/25'
 
-DECLARE @AcademicYear VARCHAR(5) = '24/25'
+DELETE REQR
+FROM EnrolmentRequest REQ
+INNER JOIN EnrolmentRequestReject REQR
+	ON REQR.EnrolmentRequestID = REQ.EnrolmentRequestID
+WHERE
+	REQ.AcademicYearID = @AcademicYear
+	AND REQ.RequestSource = 'eSignUp'
+
+
+
+--DECLARE @AcademicYear VARCHAR(5) = '24/25'
 
 DELETE REQ
 FROM EnrolmentRequest REQ
 WHERE
 	REQ.AcademicYearID = @AcademicYear
 	AND REQ.RequestSource = 'eSignUp'
-
