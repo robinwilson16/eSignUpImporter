@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Robin Wilson")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("A tool for importing data from eSignUp")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.2")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db02005d602bd829a9d698a1323a878e6c43ef50")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fe8922b0f2fe93f837e5ca38bee5ce319ede4ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("eSignUpImporter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eSignUpImporter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.2")]

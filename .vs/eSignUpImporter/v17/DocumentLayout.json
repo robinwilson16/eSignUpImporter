@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|c:\\users\\robin.wilson\\source\\repos\\esignupimporter\\esignupimporter\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|solutionrelative:esignupimporter\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|c:\\users\\robin.wilson\\source\\repos\\esignupimporter\\esignupimporter\\modelsexportcandidate\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|solutionrelative:esignupimporter\\modelsexportcandidate\\candidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|c:\\users\\robin.wilson\\source\\repos\\esignupimporter\\esignupimporter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|solutionrelative:esignupimporter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|c:\\users\\robin.wilson\\source\\repos\\esignupimporter\\esignupimporter\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|solutionrelative:esignupimporter\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{629F6062-0A0B-460C-9B7B-928CEF757C36}|eSignUpImporter\\eSignUpImporter.csproj|c:\\users\\robin.wilson\\source\\repos\\esignupimporter\\esignupimporter\\appsettingsdefault.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -181,23 +181,26 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "eSignUpImporter",
               "DocumentMoniker": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\eSignUpImporter.csproj",
               "RelativeDocumentMoniker": "eSignUpImporter\\eSignUpImporter.csproj",
               "ToolTip": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\eSignUpImporter.csproj",
               "RelativeToolTip": "eSignUpImporter\\eSignUpImporter.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-13T19:20:30.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T19:20:30.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\Program.cs",
               "RelativeDocumentMoniker": "eSignUpImporter\\Program.cs",
@@ -205,8 +208,7 @@
               "RelativeToolTip": "eSignUpImporter\\Program.cs",
               "ViewState": "AgIAAMoEAAAAAAAAAAAAAOYEAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:03:29.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:03:29.527Z"
             },
             {
               "$type": "Document",
@@ -218,8 +220,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\PlacedRecruitment.cs",
               "ViewState": "AgIAADIAAAAAAAAAAADwv0MAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:44:14.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:44:14.571Z"
             },
             {
               "$type": "Document",
@@ -231,18 +232,17 @@
               "RelativeToolTip": "eSignUpImporter\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAxwDYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:05:24.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:05:24.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\appsettings.json",
               "RelativeDocumentMoniker": "eSignUpImporter\\appsettings.json",
               "ToolTip": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\appsettings.json",
               "RelativeToolTip": "eSignUpImporter\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-14T00:12:45.815Z",
               "EditorCaption": ""
@@ -257,8 +257,7 @@
               "RelativeToolTip": "eSignUpImporter\\appsettingsDefault.json",
               "ViewState": "AgIAAAoAAAAAAAAAAAAwwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-14T00:16:26.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:16:26.034Z"
             },
             {
               "$type": "Document",
@@ -270,12 +269,11 @@
               "RelativeToolTip": "eSignUpImporter\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-14T00:12:46.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:12:46.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Candidate.cs",
               "DocumentMoniker": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\ModelsExportCandidate\\Candidate.cs",
               "RelativeDocumentMoniker": "eSignUpImporter\\ModelsExportCandidate\\Candidate.cs",
@@ -288,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ApprenticeshipEmployer.cs",
               "DocumentMoniker": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\ModelsExportCandidate\\ApprenticeshipEmployer.cs",
               "RelativeDocumentMoniker": "eSignUpImporter\\ModelsExportCandidate\\ApprenticeshipEmployer.cs",
@@ -296,12 +294,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\ApprenticeshipEmployer.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAtwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T10:06:24.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2024-12-14T10:06:24.051Z"
             },
             {
               "$type": "Document",
@@ -313,8 +306,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\CandidateEnrolmentRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T21:59:31.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T21:59:31.932Z"
             },
             {
               "$type": "Document",
@@ -326,8 +318,7 @@
               "RelativeToolTip": "eSignUpImporter\\eSignUpImporter.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-14T00:01:13.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:01:13.245Z"
             },
             {
               "$type": "Document",
@@ -339,8 +330,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\LLDDAndHealthProblem.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAxwCAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:27:59.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:27:59.815Z"
             },
             {
               "$type": "Document",
@@ -352,8 +342,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\CandidateQualification.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T12:26:29.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T12:26:29.4Z"
             },
             {
               "$type": "Document",
@@ -365,8 +354,7 @@
               "RelativeToolTip": "eSignUpImporter\\Models\\EnrolmentRequestEmploymentHistory.cs",
               "ViewState": "AgIAADMAAAAAAAAAAEBTwD8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T07:48:26.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T07:48:26.965Z"
             },
             {
               "$type": "Document",
@@ -378,8 +366,7 @@
               "RelativeToolTip": "eSignUpImporter\\Models\\EnrolmentRequestQualsOnEntry.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T07:48:32.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T07:48:32.483Z"
             },
             {
               "$type": "Document",
@@ -391,8 +378,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\EnglishAndMathsQualification.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T12:14:13.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T12:14:13.439Z"
             },
             {
               "$type": "Document",
@@ -404,8 +390,7 @@
               "RelativeToolTip": "eSignUpImporter\\Models\\EnrolmentRequest.cs",
               "ViewState": "AgIAAH8DAAAAAAAAAAAgwLMDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T07:48:17.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T07:48:17.997Z"
             },
             {
               "$type": "Document",
@@ -417,8 +402,7 @@
               "RelativeToolTip": "eSignUpImporter\\Shared\\StringFunctions.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T01:59:53.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T01:59:53.311Z"
             },
             {
               "$type": "Document",
@@ -430,8 +414,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\LLDDAndHealthProblemPeopleSoft.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:30:44.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:30:44.112Z"
             },
             {
               "$type": "Document",
@@ -443,8 +426,7 @@
               "RelativeToolTip": "eSignUpImporter\\Models\\ProSolutionApprenticeshipProgramme.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T23:47:03.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T23:47:03.807Z"
             },
             {
               "$type": "Document",
@@ -456,8 +438,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\LearnerEmploymentStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:32:32.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:32:32.992Z"
             },
             {
               "$type": "Document",
@@ -469,8 +450,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\EnglishMathsComponent.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAuwCoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T10:20:32.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T10:20:32.719Z"
             },
             {
               "$type": "Document",
@@ -482,8 +462,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\OnboardingDocument.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T10:15:49.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T10:15:49.492Z"
             },
             {
               "$type": "Document",
@@ -495,8 +474,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\HouseholdSituation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T10:13:34.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T10:13:34.349Z"
             },
             {
               "$type": "Document",
@@ -508,8 +486,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\CustomField.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:21:24.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:21:24.62Z"
             },
             {
               "$type": "Document",
@@ -521,8 +498,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\ContactPreference.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:24:52.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:24:52.656Z"
             },
             {
               "$type": "Document",
@@ -534,8 +510,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\CandidateNote.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAxwCEAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T12:16:31.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T12:16:31.638Z"
             },
             {
               "$type": "Document",
@@ -547,8 +522,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\CandidateExtraFields.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAiwDYAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T12:20:18.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T12:20:18.369Z"
             },
             {
               "$type": "Document",
@@ -560,8 +534,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsExportCandidate\\CandidateDocument.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T09:39:55.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T09:39:55.71Z"
             },
             {
               "$type": "Document",
@@ -573,8 +546,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CandidateDocument.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:04.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:04.125Z"
             },
             {
               "$type": "Document",
@@ -586,8 +558,7 @@
               "RelativeToolTip": "eSignUpImporter\\Models\\EnrolmentRequestDisabilityCategory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T07:48:19.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T07:48:19.826Z"
             },
             {
               "$type": "Document",
@@ -599,8 +570,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\Candidate.cs",
               "ViewState": "AgIAABsAAAAAAAAAAADwvyQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:05:48.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:05:48.651Z"
             },
             {
               "$type": "Document",
@@ -612,8 +582,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CandidateEnrolmentRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:07.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:07.482Z"
             },
             {
               "$type": "Document",
@@ -625,8 +594,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CandidateExtraField.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwB4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:18.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:18.347Z"
             },
             {
               "$type": "Document",
@@ -638,8 +606,7 @@
               "RelativeToolTip": "eSignUpImporter\\Models\\APIAccessToken.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:05:41.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:05:41.482Z"
             },
             {
               "$type": "Document",
@@ -651,8 +618,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CandidateDisabilityLearningDifficultyResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:00.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:00.249Z"
             },
             {
               "$type": "Document",
@@ -664,8 +630,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CandidateQualification.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:24.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:24.951Z"
             },
             {
               "$type": "Document",
@@ -677,8 +642,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CandidateNote.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:21.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:21.837Z"
             },
             {
               "$type": "Document",
@@ -690,8 +654,7 @@
               "RelativeToolTip": "eSignUpImporter\\ModelsCandidateGetAll\\CustomFieldValue.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T00:06:27.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T00:06:27.858Z"
             },
             {
               "$type": "Document",
