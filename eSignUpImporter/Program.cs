@@ -504,16 +504,18 @@ namespace eSignUpImporter
         {
             var enrolmentRequestSettings = _config?.GetSection("EnrolmentRequests");
             string? academicYearID = enrolmentRequestSettings?["AcademicYearID"];
+            string? minAcademicYearID = enrolmentRequestSettings?["MinAcademicYearID"];
 
             string miSystemResult;
 
             try
             {
                 EnrolmentRequests = await _context?.EnrolmentRequest
-                    .Where(e => e.AcademicYearId == academicYearID)
+                    //.Where(e => e.AcademicYearId == academicYearID) //Need to get all years from min year to current year to avoid imorting older ones again
+                    .Where(e => e.AcademicYearId.CompareTo(minAcademicYearID) >= 0 && e.AcademicYearId.CompareTo(academicYearID) <= 0)
                     .ToListAsync()!;
 
-                miSystemResult = $"Found {EnrolmentRequests?.Count ?? 0} Enrolment Requests in ProSolution in {academicYearID}";
+                miSystemResult = $"Found {EnrolmentRequests?.Count ?? 0} Enrolment Requests in ProSolution between {minAcademicYearID} and {academicYearID}";
 
 
             }
@@ -591,7 +593,7 @@ namespace eSignUpImporter
             {
                 foreach (var candidate in ECCandidates)
                 {
-
+                    
                     //Check if learner already imported into ProSolution
                     var foundEnrolmentRequest = EnrolmentRequests?.Where(e => e.Email == candidate.Email).FirstOrDefault();
 
@@ -612,6 +614,8 @@ namespace eSignUpImporter
                             .CandidateEnrolmentRequest = candidateEnrolmentRequest;
 
                     }
+
+                    //Console.WriteLine($"{candidate.Email} - {candidate.CandidateEnrolmentRequest?.CandidateEnrolmentRequestID}");
                 }
             }
 

@@ -8,7 +8,6 @@ C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\eSignUpImporter.deps.json
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\eSignUpImporter.runtimeconfig.json
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\eSignUpImporter.dll
-C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\eSignUpImporter.pdb
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\Azure.Core.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\Azure.Identity.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\Humanizer.dll
@@ -146,15 +145,12 @@ C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpI.4FD1162B.Up2Date
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\refint\eSignUpImporter.dll
-C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.pdb
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.genruntimeconfig.cache
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\ref\eSignUpImporter.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\obj\Debug\net9.0\eSignUpImporter.sourcelink.json
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\appsettingsDefault.json
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
-C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\System.Formats.Asn1.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\System.Text.Json.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\cs\Microsoft.Data.SqlClient.resources.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\pl\Microsoft.Data.SqlClient.resources.dll
 C:\Users\robin.wilson\source\repos\eSignUpImporter\eSignUpImporter\bin\Debug\net9.0\tr\Microsoft.Data.SqlClient.resources.dll
