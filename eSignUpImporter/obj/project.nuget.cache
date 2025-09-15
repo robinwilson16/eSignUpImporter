@@ -80,5 +80,15 @@
     "C:\\Users\\robin.wilson\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\robin.wilson\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\eSignUpImporter.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\robin.wilson\\source\\repos\\eSignUpImporter\\eSignUpImporter\\eSignUpImporter.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

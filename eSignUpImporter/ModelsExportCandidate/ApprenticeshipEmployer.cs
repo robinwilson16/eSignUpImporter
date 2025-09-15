@@ -38,7 +38,10 @@ namespace eSignUpImporter.ModelsExportCandidate
         [Display(Name = "EDRS Number")]
         public int? eDRSNumber
         {
-            get { return EDRSNumber == null ? null : EDRSNumber == "" ? null : int.Parse(EDRSNumber ?? "", new CultureInfo("en-GB")); }
+            get {
+                int.TryParse(EDRSNumber, new CultureInfo("en-GB"), out int EDRSNumberInt);
+                return EDRSNumberInt; 
+            }
         }
 
         public string? VacancyEmployerSiteName { get; set; }

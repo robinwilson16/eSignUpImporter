@@ -512,10 +512,14 @@ namespace eSignUpImporter
             {
                 EnrolmentRequests = await _context?.EnrolmentRequest
                     //.Where(e => e.AcademicYearId == academicYearID) //Need to get all years from min year to current year to avoid imorting older ones again
-                    .Where(e => e.AcademicYearId.CompareTo(minAcademicYearID) >= 0 && e.AcademicYearId.CompareTo(academicYearID) <= 0)
+                    .Where(e => 
+                        e.AcademicYearId.CompareTo(minAcademicYearID) >= 0 
+                        && e.AcademicYearId.CompareTo(academicYearID) <= 0
+                        && e.RequestSource == "eSignUp" //Learners may have previously been imported from web toolkit so this is not a duplicate and they should still be imported
+                    )
                     .ToListAsync()!;
 
-                miSystemResult = $"Found {EnrolmentRequests?.Count ?? 0} Enrolment Requests in ProSolution between {minAcademicYearID} and {academicYearID}";
+                miSystemResult = $"Found {EnrolmentRequests?.Count ?? 0} Enrolment Requests in ProSolution between {minAcademicYearID} and {academicYearID} previously imported from eSignUp";
 
 
             }

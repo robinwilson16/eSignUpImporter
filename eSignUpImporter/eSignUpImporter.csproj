@@ -9,8 +9,8 @@
     <Description>A tool for importing data from eSignUp</Description>
     <Copyright>Robin Wilson</Copyright>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>1.0.3</AssemblyVersion>
-    <FileVersion>1.0.3</FileVersion>
+    <AssemblyVersion>1.0.4</AssemblyVersion>
+    <FileVersion>1.0.4</FileVersion>
   </PropertyGroup>
 
   <!-- Embed PDB file into .exe for single file publish-->
